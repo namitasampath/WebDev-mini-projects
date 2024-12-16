@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hello</title>
+    <style>
+        .yesb{
+            font-family: serif;
+            background-color: rgb(229, 255, 0);
+            position:absolute;
+            top: 50%;
+            left: 38%;
+            margin: 8px 4px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition-duration: 1s;
+            display: block;
+        }
+        .nob{
+            font-family: serif;
+            background-color: rgb(229, 255, 0);
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            margin: 8px 4px;
+            padding: 10px 20px;
+            border-radius: 6px;
+            display: block;
+            transition-duration: 0.1s;
+        }
+        
+    </style>
+</head>
+<body bgcolor="firebrick">
+    <center>
+    <h1>Will you send me money</h1>
+    <img id="mcq1" alt="mcq1" style="width:300.0px" ; src="http://vignette2.wikia.nocookie.net/pixar/images/9/99/Lightning_McQueen_Cars_3_Edition.png/revision/latest?cb=20170207173653">
+    <button id="yes" class="yesb">Yes</button><button class="nob">No</button>
+    <div id="Yes" class="y"></div>
+</center>
+
+<script>
+    var nah = document.querySelector(".nob");
+nah.addEventListener("click",change);
+
+function change()
+{
+    var i = Math.floor(Math.random()*1200)+1;
+    var j = Math.floor(Math.random()*500)+1;
+    nah.style.left = i+"px";
+    nah.style.top = j+"px";
+    
+    
+}
+var yeah = document.querySelector(".yesb");
+yeah.addEventListener("click",function(){
+    var YesMsg = document.getElementById("Yes");
+            YesMsg.textContent = "WOOHOOOO UPI ID: yourupiid@okbankname";
+    document.getElementById('mcq1').src = "https://www.nicepng.com/png/full/12-124601_lightning-mcqueen-png.png";
+    });
+
+
+</script>
+</body>
+</html>
