@@ -1,0 +1,60 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.sandwich {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    transform: scale(1.5);
+}
+
+.ingredient {
+    width: 200px;
+    height: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.top-bread, .bottom-bread {
+    background-color: #d9a66a;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.top-bread {
+    border-radius: 25px 25px 10px 10px;
+}
+
+.bottom-bread {
+    border-radius: 10px 10px 25px 25px;
+}
+
+.lettuce {
+    background-color: #6b8e23;
+
+}
+
+.tomato {
+    background-color: #ff6347;
+    border-radius: 20px;
+}
+
+.cheese {
+    background-color: #f0e68c;
+    height: 10px;
+    clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+.meat {
+    background-color: #a0522d;
+    height: 25px;
+    border-radius: 15px;
+}
