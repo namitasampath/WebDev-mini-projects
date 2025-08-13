@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ur cute :P</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background: #f8f8f8;
+      overflow-x: hidden;
+    }
+    body {
+    background-color: #eac285;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 20px;
+      color: #713e16;
+    }
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1; 
+  object-fit: cover;  
+  border-radius: 10px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+    .confetti {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      top: -20px;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+    .bottom-text {
+  text-align: center;
+  margin: 30px 20px;
+  font-size: 1.2rem;
+  color: #713e16;
+  font-weight: 500;
+}
+
+  </style>
+</head>
+<body>
+
+<h1>Have a great year</h1>
+
+<div class="gallery">
+  <img src="images/photo1.jpg" alt="Birthday 1">
+  <img src="images/photo2.jpg" alt="Birthday 2">
+  <img src="images/photo3.jpg" alt="Birthday 3">
+  <img src="images/photo4.jpg" alt="Birthday 4">
+</div>
+
+<div class="bottom-text">
+  <p>I'll get you a better present next time</p>
+</div>
+
+<script>
+const colors = ['#ff5555', '#ffdd55', '#55ff55', '#55aaff', '#aa55ff'];
+const shapes = ['circle', 'square', 'triangle'];
+
+function createConfetti() {
+  const confetti = document.createElement('div');
+  confetti.classList.add('confetti');
+
+  const shape = shapes[Math.floor(Math.random() * shapes.length)];
+  const size = 8 + Math.random() * 12 + 'px';
+  confetti.style.width = size;
+  confetti.style.height = size;
+  confetti.style.left = Math.random() * window.innerWidth + 'px';
+  confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+
+  if(shape === 'circle') {
+    confetti.style.borderRadius = '50%';
+  } else if(shape === 'triangle') {
+    confetti.style.width = '0';
+    confetti.style.height = '0';
+    confetti.style.borderLeft = size + ' solid transparent';
+    confetti.style.borderRight = size + ' solid transparent';
+    confetti.style.borderBottom = size + ' solid ' + colors[Math.floor(Math.random() * colors.length)];
+    confetti.style.backgroundColor = 'transparent';
+  }
+
+  document.body.appendChild(confetti);
+
+  const fallDuration = 1000 + Math.random() * 1000;
+  confetti.animate([
+    { transform: 'translateY(0px) rotate(0deg)' },
+    { transform: `translateY(${window.innerHeight + 50}px) rotate(${Math.random()*720}deg)` }
+  ], {
+    duration: fallDuration,
+    easing: 'linear'
+  });
+
+  setTimeout(() => confetti.remove(), fallDuration);
+}
+
+
+const confettiInterval = setInterval(createConfetti, 50);
+
+
+setTimeout(() => clearInterval(confettiInterval), 3000);
+</script>
+
+</body>
+</html>
